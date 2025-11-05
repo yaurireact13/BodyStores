@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff6b00">
+    <title>Catálogo completo - BodyStore Navidad</title>
+    <meta name="description" content="Catálogo completo de productos navideños - BodyStore">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="catalog-page">
+    <header>
+        <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon"><img src="img/logo_oscuro.png" alt="BodyStore" width="65" height="65" style="border: 2px solid #fd4141; border-radius: 50%;"></div>
+                <span><a href="index.html" style="text-decoration:none; color: inherit;">BodyStore</a></span>
+                </div>
+            <nav>
+                <a href="index.html#inicio">INICIO</a>
+                <a href="index.html#productos">CATÁLOGO</a>
+                <a href="index.html#contacto">CONTACTO</a>
+                <button class="cart-btn" onclick="openCart()">👩🏻‍💻 PERSONAL</button>
+            </nav>
+        </div>
+    </header>
+
+    <main style="max-width:1200px; margin:2rem auto; padding:0 20px;">
+        <h1 style="color:#333; margin-bottom:1rem;">Catálogo completo</h1>
+        <p style="margin-bottom:1rem; color:#666;">Todos los productos disponibles en BodyStore Navidad.</p>
+
+        <div style="margin-bottom:1rem; display:flex; gap:0.8rem; align-items:center;">
+            <input id="searchInput" type="search" placeholder="Buscar producto..." style="flex:1; padding:0.6rem 0.8rem; border-radius:6px; border:1px solid #ddd;">
+            <select id="filterSelect" style="padding:0.6rem; border-radius:6px; border:1px solid #ddd;">
+                <option value="all">Todos</option>
+                <option value="discount">Con descuento</option>
+                <option value="stock">En stock</option>
+            </select>
+        </div>
+
+        <section class="products-section">
+            <div class="section-header">
+                <h2 class="section-title">Productos</h2>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </section>
+
+    </main>
+
+        <!-- modal (same as index) -->
+        <div class="modal" id="productModal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal()">×</span>
+                <div id="modalBody"></div>
+            </div>
+        </div>
+
+    <!-- reuse footer from index -->
+    <footer id="contacto" class="site-footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon"><img src="img/logo.png" alt="BodyStore" width="48" height="48"></div>
+                        <span>BodyStore</span>
+                    </div>
+                    <p class="brand-desc">Vive la magia de la Navidad con nuestros productos seleccionados. Envío gratis y ofertas especiales.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" title="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram" title="Instagram">📷</a>
+                        <a href="#" aria-label="WhatsApp" title="WhatsApp">💬</a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#productos">Productos</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                        <li><a href="privacy.html">Política de privacidad</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contáctanos</h4>
+                    <p>📧 <a href="mailto:storebody41@gmail.com">storebody41@gmail.com</a></p>
+                    <p>📞 <a href="tel:+51946431348">+51 946 431 348</a></p>
+                    <p>📍 Lima, Perú</p>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h4>Suscríbete</h4>
+                    <p>Recibe ofertas exclusivas en tu correo.</p>
+                    <form id="newsletterForm">
+                        <label for="newsletterEmail" class="sr-only">Correo electrónico</label>
+                        <input type="email" id="newsletterEmail" name="email" placeholder="tucorreo@gmail.com" required aria-label="Correo electrónico">
+                        <button type="submit" class="subscribe-btn">Suscribirse</button>
+                    </form>
+                    <div id="newsletterMessage" aria-live="polite" class="newsletter-message"></div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="payments">Aceptamos: Transferencia .Yape</div>
+                <div class="copyright">© 2025 BodyStore Navidad. Todos los derechos reservados.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff6b00">
+    <title>🎅 BodyStore Navidad - Tienda Online</title>
+    <meta name="description" content="Ofertas navideñas en BodyStore - envío gratis y descuentos especiales.">
+    <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" href="img/logo.png" type="image/png">
+        <link rel="apple-touch-icon" href="img/logo.png">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon"><img src="img/logo_oscuro.png" alt="BodyStore" width="65" height="65" style="border: 2px solid #fd4141; border-radius: 50%;"></div>
+                <span><a href="index.html" style="text-decoration:none; color: inherit;">BodyStore</a></span>
+            </div>
+            <nav>
+                <a href="#inicio">INICIO</a>
+                <a href="products.html">CATÁLOGO</a>
+                <a href="#contacto">CONTACTO</a>
+                <button class="cart-btn" onclick="openCart()">
+                    👩🏻‍💻 PERSONAL
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="free-shipping-banner">
+         Envío Gratis para Lima, y provincia por shalom 🚛
+    </div>
+
+    <div class="countdown-banner" style="margin-top: 0;">
+        <h2>🎁 ¡OFERTA ESPECIAL NAVIDEÑA! 🎁</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 1rem; text-align: center;">Esta oferta termina en:</p>
+        <div class="countdown">
+            <div class="countdown-item">
+                <div id="days">00</div>
+                <span>Días</span>
+            </div>
+            <div class="countdown-item">
+                <div id="hours">00</div>
+                <span>Horas</span>
+            </div>
+            <div class="countdown-item">
+                <div id="minutes">00</div>
+                <span>Minutos</span>
+            </div>
+            <div class="countdown-item">
+                <div id="seconds">00</div>
+                <span>Segundos</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDER -->
+    <div class="slider-container" id="inicio">
+        <div class="slider">
+            <div class="slides" id="slides">
+                <div class="slide">
+                    <img src="img/slide1.png" alt="Set Navideño 8 Fundas + Mantel" class="slide-background">
+                    <div class="slide-content">
+                        <h2>🎄 Navidad Mágica 🎄</h2>
+                        <p>Descuentos de hasta 40% en productos seleccionados</p>
+                        <button class="slide-btn" onclick="scrollToProducts()">Ver Productos</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="img/slide4.jpg" alt="Set Navideño 6 Fundas + Mantel" class="slide-background">
+                    <div class="slide-content">
+                        <h2>🎁 Envío Gratis 🎁</h2>
+                        <p>En todas tus compras navideñas</p>
+                        <button class="slide-btn" onclick="scrollToProducts()">Comprar Ahora</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="img/slide6.jpeg" alt="Set Navideño" class="slide-background">
+                    <div class="slide-content">
+                        <h2>⭐ Ofertas Especiales ⭐</h2>
+                        <p>Lleva 3 y obtén 25% de descuento</p>
+                        <button class="slide-btn" onclick="scrollToProducts()"><a href="products.html" style="text-decoration: none; color: #c41e3a">Aprovechar Oferta</a></button>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-nav prev" onclick="changeSlide(-1)">‹</button>
+            <button class="slider-nav next" onclick="changeSlide(1)">›</button>
+            <div class="slider-dots" id="sliderDots"></div>
+        </div>
+    </div>
+
+    <section class="products-section" id="productos">
+        <div class="section-header">
+            <h2 class="section-title">Ofertas de la semana</h2>
+            <a href="products.html" class="ver-todo">Ver todo →</a>
+        </div>
+        <div class="products-grid" id="productsGrid"></div>
+    </section>
+
+    <div class="whatsapp-float" onclick="openWhatsAppGeneral()">
+        💬
+    </div>
+
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer id="contacto" class="site-footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon"><img src="img/logo.png" alt="BodyStore" width="65" height="65"></div>
+                        <span>BodyStore</span>
+                    </div>
+                    <p class="brand-desc">Vive la magia de la Navidad con nuestros productos seleccionados. Envío gratis y ofertas especiales.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61582266080290" aria-label="Facebook" title="Facebook" target="_blank">📘</a>
+                        <a href="https://www.instagram.com/body.store13/" aria-label="Instagram" title="Instagram" target="_blank">📷</a>
+                        <a href="https://wa.me/51946431348" aria-label="WhatsApp" title="WhatsApp" target="_blank">💬</a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="privacy.html">Política de privacidad</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contáctanos</h4>
+                    <p>📧 <a href="mailto:storebody41@gmail.com">storebody41@gmail.com</a></p>
+                    <p>📞 <a href="tel:+51946431348">+51 946 431 348</a></p>
+                    <p>📍 Lima, Perú</p>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h4>Suscríbete</h4>
+                    <p>Recibe ofertas exclusivas en tu correo.</p>
+                    <form id="newsletterForm">
+                        <label for="newsletterEmail" class="sr-only">Correo electrónico</label>
+                        <input type="email" id="newsletterEmail" name="email" placeholder="tucorreo@gmail.com" required aria-label="Correo electrónico">
+                        <button type="submit" class="subscribe-btn">Suscribirse</button>
+                    </form>
+                    <div id="newsletterMessage" aria-live="polite" class="newsletter-message"></div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="payments">Aceptamos: Transferencia .Yape</div>
+                <div class="copyright">© 2025 BodyStore Navidad. Todos los derechos reservados.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+    <noscript>
+        <div style="background:#ffc; padding:1rem; text-align:center;">Esta página requiere JavaScript para funcionar correctamente. Por favor habilítalo en tu navegador.</div>
+    </noscript>
+</body>
+</html>
