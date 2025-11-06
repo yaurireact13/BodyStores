@@ -27,7 +27,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    position: relative;
 }
 
 .logo {
@@ -212,6 +212,12 @@ nav a:hover {
     font-size: 1.6rem;
     cursor: pointer;
     color: #333;
+    padding: 0.5rem;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
 }
 
 .main-nav {
@@ -225,15 +231,64 @@ nav a:hover {
     text-decoration: none;
     font-weight: 600;
     padding: 0.4rem 0.2rem;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #ff6b00;
 }
 
 @media (max-width: 800px) {
-    .nav-toggle { display: block; }
-    .header-content { justify-content: space-between; }
-    .main-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 1rem; box-shadow: 0 8px 30px rgba(0,0,0,0.12); flex-direction: column; gap: 0.5rem; }
-    body.nav-open .main-nav { display: flex; }
-    .main-nav a { display: block; padding: 0.6rem 0; color: #333; }
-    .main-nav .cart-btn { display: block; width: 100%; }
+    .header-content {
+        padding: 1rem 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-right: 3rem;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 1rem;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+        text-align: center;
+        z-index: 999;
+    }
+
+    body.nav-open .main-nav {
+        display: flex;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 0.8rem;
+        color: #333;
+        border-bottom: 1px solid #eee;
+    }
+
+    .main-nav a:last-child {
+        border-bottom: none;
+    }
+
+    .main-nav .cart-btn {
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0;
+    }
 }
 
 /* small screens: stack nav links visually */
