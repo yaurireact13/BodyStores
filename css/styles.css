@@ -96,6 +96,152 @@ nav a:hover {
     font-weight: 500;
 }
 
+/* Privacy Page Styles */
+.privacy-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.privacy-title {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.privacy-date {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.privacy-section {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.privacy-section-title {
+    color: #ff6b00;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid #ff6b00;
+}
+
+.privacy-text {
+    line-height: 1.6;
+    color: #444;
+}
+
+.privacy-section ul {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.privacy-section li {
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+    color: #444;
+}
+
+.privacy-section a {
+    color: #ff6b00;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.privacy-section a:hover {
+    border-bottom-color: #ff6b00;
+}
+
+.privacy-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.privacy-update-date {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.privacy-back-link {
+    display: inline-block;
+    color: #ff6b00;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: 2px solid #ff6b00;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.privacy-back-link:hover {
+    background: #ff6b00;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255,107,0,0.3);
+}
+
+@media (max-width: 600px) {
+    .privacy-title {
+        font-size: 2rem;
+    }
+    
+    .privacy-section {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .privacy-section-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* Responsive navbar styles */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.main-nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.main-nav a {
+    color: #666;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.2rem;
+}
+
+@media (max-width: 800px) {
+    .nav-toggle { display: block; }
+    .header-content { justify-content: space-between; }
+    .main-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 1rem; box-shadow: 0 8px 30px rgba(0,0,0,0.12); flex-direction: column; gap: 0.5rem; }
+    body.nav-open .main-nav { display: flex; }
+    .main-nav a { display: block; padding: 0.6rem 0; color: #333; }
+    .main-nav .cart-btn { display: block; width: 100%; }
+}
+
+/* small screens: stack nav links visually */
+@media (max-width: 480px) {
+    .main-nav { padding: 0.8rem; }
+    .nav-toggle { font-size: 1.8rem; }
+}
+
 /* SLIDER STYLES */
 .slider-container {
     max-width: 1200px;

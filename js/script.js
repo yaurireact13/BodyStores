@@ -381,6 +381,35 @@ function resetAutoSlide() {
     startAutoSlide();
 }
 
+// Toggle responsive navigation (shows/hides mobile menu)
+function toggleNav() {
+    const btn = document.querySelector('.nav-toggle');
+    if (btn) {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+    }
+    document.body.classList.toggle('nav-open');
+}
+
+// Close nav when clicking a nav link
+document.addEventListener('click', (e) => {
+    const link = e.target.closest && e.target.closest('.main-nav a');
+    if (link) {
+        document.body.classList.remove('nav-open');
+        const btn = document.querySelector('.nav-toggle');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+    }
+});
+
+// Close nav with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        document.body.classList.remove('nav-open');
+        const btn = document.querySelector('.nav-toggle');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+    }
+});
+
 function scrollToProducts() {
     const elem = document.getElementById('productos');
     if (elem) elem.scrollIntoView({ behavior: 'smooth' });
